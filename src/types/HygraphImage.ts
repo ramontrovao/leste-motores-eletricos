@@ -1,3 +1,3 @@
-export type HygraphImage = {
+export type THygraphImage = {
   url: string;
 };
