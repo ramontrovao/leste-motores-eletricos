@@ -1,5 +1,5 @@
 import { HomeBanner } from "./components/HomeBanner";
-import { HighlightedProductsSection } from "./components/HighlightedProductsSection";
+import { HighlightedProductsSection } from "./components/HighlightedProducts/HighlightedProductsSection";
 
 export default function Home() {
   return (

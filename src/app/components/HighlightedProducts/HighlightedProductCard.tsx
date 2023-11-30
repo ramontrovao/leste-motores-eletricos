@@ -8,13 +8,13 @@ interface HighlightedProductCardProps {
 }
 
 export const HighlightedProductCard = async ({
-  imageUrl,
-  productName,
-  productAlt,
-  productLink,
+  imageUrl = "/logo.svg",
+  productName = "Falha ao carregar o nome do produto :(",
+  productAlt = "Falha ao carregar a legenda do produto :(",
+  productLink = "/",
 }: HighlightedProductCardProps) => {
   return (
-    <div className="w-full p-4 rounded-md max-w-xs flex justify-center items-center flex-col gap-4 bg-white">
+    <div className="w-full min-h-[20rem] h-full p-4 rounded-md max-w-xs flex justify-between items-center flex-col gap-4 bg-white">
       <Image
         src={imageUrl}
         alt={productAlt}
