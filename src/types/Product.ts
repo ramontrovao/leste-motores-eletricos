@@ -11,5 +11,5 @@ export type TProduct = {
     id: string;
     tituloDaImagem: string;
     imagemDoProduto: THygraphImage;
-  };
+  }[];
 };

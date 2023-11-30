@@ -1,4 +1,4 @@
-import { TInitialBanner } from "@/src/types/InitialBanner";
+import type { TInitialBanner } from "@/src/types/InitialBanner";
 import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import Image from "next/image";
 
