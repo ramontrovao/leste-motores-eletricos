@@ -3,7 +3,7 @@ import { Searchbar } from "./Searchbar";
 
 export const Header = () => {
   return (
-    <header className="fixed p-4 w-full bg-blue">
+    <header className="fixed z-20 p-4 w-full bg-blue">
       <div className="m-auto max-w-7xl flex flex-wrap gap-4 justify-center items-center md:flex-nowrap md:justify-between">
         <Image
           src="/logo.svg"

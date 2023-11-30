@@ -17,12 +17,26 @@ export const HighlightedProductsSlider = ({
   return (
     <Swiper
       modules={[Navigation]}
-      spaceBetween={50}
-      slidesPerView={3}
+      centeredSlides
+      centeredSlidesBounds
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      }}
       navigation
       loop>
       {products.map((product) => (
-        <SwiperSlide>
+        <SwiperSlide key={product.id}>
           <HighlightedProductCard
             productName={product.nome}
             productAlt={`Imagem do product ${product.nome}`}

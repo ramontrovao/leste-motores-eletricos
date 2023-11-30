@@ -1,5 +1,6 @@
 import { HomeBanner } from "./components/HomeBanner";
 import { HighlightedProductsSection } from "./components/HighlightedProducts/HighlightedProductsSection";
+import { ReviewSection } from "./components/Reviews/ReviewSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
 
       <div className="m-auto max-w-7xl">
         <HighlightedProductsSection />
+        <ReviewSection />
       </div>
     </main>
   );

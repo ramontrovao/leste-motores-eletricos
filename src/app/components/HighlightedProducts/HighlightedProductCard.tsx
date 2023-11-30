@@ -14,7 +14,7 @@ export const HighlightedProductCard = async ({
   productLink = "/",
 }: HighlightedProductCardProps) => {
   return (
-    <div className="w-full min-h-[20rem] h-full p-4 rounded-md max-w-xs flex justify-between items-center flex-col gap-4 bg-white">
+    <div className="w-full min-h-[20rem] h-full p-4 rounded-md max-w-none  flex justify-between items-center flex-col gap-4 bg-white md:max-w-xs">
       <Image
         src={imageUrl}
         alt={productAlt}
