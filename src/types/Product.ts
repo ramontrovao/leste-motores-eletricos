@@ -3,6 +3,7 @@ import type { TCharacteristic } from "./Characteristic";
 import type { THygraphImage } from "./HygraphImage";
 
 export type TProduct = {
+  id: string;
   nome: string;
   caracteristicas: TCharacteristic[];
   categorias: TCategory[];
@@ -11,5 +12,5 @@ export type TProduct = {
     id: string;
     tituloDaImagem: string;
     imagemDoProduto: THygraphImage;
-  };
+  }[];
 };
