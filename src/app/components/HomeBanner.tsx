@@ -15,7 +15,7 @@ export const HomeBanner = async () => {
   return (
     <header>
       <Image
-        className="w-full"
+        className="w-full min-h-[20vh] md:min-h-[50vh]"
         src={bannerDaTelaInicial.imagemDoBanner.url}
         width={1280}
         height={420}
