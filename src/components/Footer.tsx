@@ -116,7 +116,7 @@ export const Footer = async () => {
                       <FaPhone />
                     </span>
 
-                    {`${transformPhoneNumber(numeroDoWhatsapp)} (fixo)`}
+                    {`${transformPhoneNumber(numeroFixo)} (fixo)`}
                   </span>
                 </li>
 

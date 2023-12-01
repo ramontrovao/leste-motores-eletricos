@@ -1,11 +1,11 @@
 "use client";
 
 import type { TProduct } from "@/src/types/Product";
-import { SwiperSlide, Swiper } from "swiper/react";
 import { HighlightedProductCard } from "./HighlightedProductCard";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
 
 interface HighlightedProductsSliderProps {
   products: TProduct[];
