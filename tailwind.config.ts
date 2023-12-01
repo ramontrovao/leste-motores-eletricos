@@ -12,7 +12,7 @@ const config: Config = {
         redShadow: "#872A22",
         blue: "#064987",
         black: "#181917",
-        yellow: "#2C2A2A",
+        yellow: "#FFCD29",
         silver: "#C6CFCE",
       },
     },

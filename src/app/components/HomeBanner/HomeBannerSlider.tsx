@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 
 interface HomeBanneSliderProps {
   images: string[];
