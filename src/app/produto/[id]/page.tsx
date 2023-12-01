@@ -43,7 +43,7 @@ export default async function Product({ params: { id } }: ProductProps) {
       <main className="pt-28 sm:pt-16 w-full bg-slate-100">
         <div className="py-8 m-auto max-w-5xl flex flex-col gap-8">
           <ProductSection product={produto} />
-          <RecommendedProductsSection />
+          <RecommendedProductsSection actualProduct={produto} />
         </div>
       </main>
 
