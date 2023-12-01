@@ -1,8 +1,8 @@
 "use client";
 
 import type { TReview } from "@/src/types/Review";
-import { SwiperSlide, Swiper } from "swiper/react";
 import { ReviewCard } from "./ReviewCard";
+import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";

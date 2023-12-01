@@ -29,8 +29,8 @@ export const Footer = async () => {
       `);
 
   return (
-    <footer className="p-4 w-full min-h-[15rem]">
-      <div className="m-auto max-w-7xl flex flex-wrap gap-16 items-start md:flex-nowrap">
+    <footer className="p-4 w-full bg-white">
+      <div className="m-auto max-w-5xl flex flex-wrap justify-between items-start md:flex-nowrap">
         <Image
           src="/logo.svg"
           alt=""
