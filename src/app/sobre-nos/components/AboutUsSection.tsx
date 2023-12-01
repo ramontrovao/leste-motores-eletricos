@@ -17,9 +17,9 @@ export const AboutUsSection = async () => {
           `);
 
   return (
-    <section className="p-4 flex flex-wrap gap-8 justify-between md:relative md:flex-nowrap">
+    <section className="p-4 flex flex-wrap gap-8 justify-between md:flex-nowrap">
       <Image
-        className="md:sticky md:top-0 w-full max-w-[35rem] rounded-lg"
+        className="w-full max-w-[35rem] rounded-lg"
         src={imagem.url}
         alt=""
         width={450}
