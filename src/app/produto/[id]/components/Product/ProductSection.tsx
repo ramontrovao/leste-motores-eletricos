@@ -8,7 +8,7 @@ interface ProductSectionProps {
 
 export const ProductSection = ({ product }: ProductSectionProps) => {
   return (
-    <section>
+    <section className="p-4">
       <header>
         <h1 className="text-2xl font-bold">{product.nome}</h1>
       </header>

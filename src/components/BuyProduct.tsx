@@ -19,7 +19,7 @@ export const BuyProduct = async ({ productName }: BuyProductProps) => {
 
   return (
     <footer className="fixed p-4 bottom-0 z-20 w-full bg-white bg-opacity-75 flex justify-center items-center gap-2">
-      <span className="text-xs md:text-md font-bold">
+      <span className="text-xs md:text-md font-bold hidden md:block">
         Tem interesse no produto?
       </span>
 
