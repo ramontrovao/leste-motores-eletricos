@@ -1,8 +1,8 @@
 import type { TInitialBanner } from "@/src/types/InitialBanner";
 import { fetchHygraph } from "@/src/utils/fetchHygraph";
-import Image from "next/image";
+import { HomeBannerSlider } from "./HomeBannerSlider";
 
-export const HomeBanner = async () => {
+export const HomeBannerSection = async () => {
   const { bannerDaTelaInicial } =
     await fetchHygraph<TInitialBanner>(`query HomeBannerQuery {
     bannerDaTelaInicial(where: {id: "clpkinrn60ns10blsz4kmwt1b"}) {
@@ -13,14 +13,14 @@ export const HomeBanner = async () => {
   }`);
 
   return (
-    <header>
-      <Image
-        className="w-full min-h-[20vh] md:min-h-[50vh]"
-        src={bannerDaTelaInicial.imagemDoBanner.url}
-        width={1280}
-        height={420}
-        alt=""
+    <section>
+      <HomeBannerSlider
+        images={[
+          bannerDaTelaInicial.imagemDoBanner.url,
+          bannerDaTelaInicial.imagemDoBanner.url,
+          bannerDaTelaInicial.imagemDoBanner.url,
+        ]}
       />
-    </header>
+    </section>
   );
 };
