@@ -18,11 +18,13 @@ export const BuyProduct = async ({ productName }: BuyProductProps) => {
           `);
 
   return (
-    <footer className="fixed p-4 bottom-0 z-20 w-full bg-white flex justify-center items-center gap-2">
-      <span>Tem interesse no produto?</span>
+    <footer className="fixed p-4 bottom-0 z-20 w-full bg-white bg-opacity-75 flex justify-center items-center gap-2">
+      <span className="text-xs md:text-md font-bold">
+        Tem interesse no produto?
+      </span>
 
       <a
-        className="bg-green-500 p-4 rounded-lg flex justify-center items-center gap-2 text-sm font-bold cursor-pointer"
+        className="bg-green-500 p-4 rounded-lg flex justify-center items-center gap-2 text-xs font-bold cursor-pointer transition-all duration-300 hover:opacity-80"
         href={`https://api.whatsapp.com/send?phone=${encodeURIComponent(
           numeroDoWhatsapp
         )}&text=${encodeURIComponent(

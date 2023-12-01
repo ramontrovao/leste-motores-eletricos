@@ -1,18 +1,18 @@
 import Image from "next/image";
 
-interface HighlightedProductCardProps {
+interface ProductCardProps {
   imageUrl: string;
   productName: string;
   productAlt: string;
   productLink: string;
 }
 
-export const HighlightedProductCard = async ({
+export const ProductCard = async ({
   imageUrl = "/logo.svg",
   productName = "Falha ao carregar o nome do produto :(",
   productAlt = "Falha ao carregar a legenda do produto :(",
   productLink = "/",
-}: HighlightedProductCardProps) => {
+}: ProductCardProps) => {
   return (
     <div className="w-full min-h-[20rem] h-full p-4 rounded-md max-w-none  flex justify-between items-center flex-col gap-4 bg-white md:max-w-xs">
       <Image

@@ -2,16 +2,16 @@
 
 import type { TProduct } from "@/src/types/Product";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { ProductCard } from "@/src/components/ProductCard";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { ProductCard } from "@/src/components/ProductCard";
 
 interface HighlightedProductsSliderProps {
   products: TProduct[];
 }
 
-export const HighlightedProductsSlider = ({
+export const RecommendedProductsSlider = ({
   products,
 }: HighlightedProductsSliderProps) => {
   return (
