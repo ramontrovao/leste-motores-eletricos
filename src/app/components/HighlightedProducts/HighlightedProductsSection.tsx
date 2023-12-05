@@ -4,34 +4,21 @@ import { HiArrowRight } from "react-icons/hi2";
 import { HighlightedProductsSlider } from "./HighlightedProductsSlider";
 
 export const HighlightedProductsSection = async () => {
-  const {
-    produtosDestaque: { produtos },
-  } =
+  const { produtosDestaque } =
     await fetchHygraph<THighlightedProducts>(`query HighlightedProductCardQuery {
         produtosDestaque(where: {id: "clpkja6sf0nwt0bm1j2o5p06u"}) {
           produtos {
             id
             nome
-            categorias {
-              nome
-              id
-              subcategorias {
-                nome
-                id
-              }
-            }
             imagensDoProduto {
-              id
               imagemDoProduto {
                 url
               }
-              tituloDaImagem
             }
             descricao
           }
         }
-      }
-      `);
+      }`);
 
   return (
     <section className="p-4">
@@ -47,7 +34,7 @@ export const HighlightedProductsSection = async () => {
       </header>
 
       <main className="mt-5">
-        <HighlightedProductsSlider products={produtos} />
+        <HighlightedProductsSlider products={produtosDestaque?.produtos} />
       </main>
     </section>
   );

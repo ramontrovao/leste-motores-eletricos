@@ -14,16 +14,19 @@ export const ProductCard = async ({
   productLink = "/",
 }: ProductCardProps) => {
   return (
-    <div className="w-full min-h-[20rem] h-full p-4 rounded-md max-w-none  flex justify-between items-center flex-col gap-4 bg-white md:max-w-xs">
+    <div className="w-full p-4 rounded-md flex justify-between items-center flex-col gap-4 bg-white md:max-w-xs">
       <Image
         src={imageUrl}
         alt={productAlt}
         width={170}
         height={170}
-        className="w-full"
       />
 
-      <span className="text-lg">{productName}</span>
+      <span
+        title={productName}
+        className="w-full text-lg truncate">
+        {productName}
+      </span>
 
       <a
         className="bg-blue text-center p-4 text-white rounded-md w-full duration-300 hover:opacity-80"

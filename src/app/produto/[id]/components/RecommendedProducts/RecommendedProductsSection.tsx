@@ -17,14 +17,6 @@ export const RecommendedProductsSection = async ({
         nome
         id
         descricao
-        categorias {
-          id
-          nome
-          subcategorias {
-            id
-            nome
-          }
-        }
         caracteristicas {
           id
           nome

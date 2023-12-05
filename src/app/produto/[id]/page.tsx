@@ -19,14 +19,6 @@ export default async function Product({ params: { id } }: ProductProps) {
         id
         nome
       }
-      categorias {
-        id
-        nome
-        subcategorias {
-          id
-          nome
-        }
-      }
       descricao
       imagensDoProduto {
         id
@@ -35,12 +27,15 @@ export default async function Product({ params: { id } }: ProductProps) {
         }
       }
       nome
+      categoria
+      subcategoria
     }
-  }`);
+  }
+  `);
 
   return (
     <>
-      <main className="pt-28 sm:pt-16 w-full bg-slate-100">
+      <main className="w-full bg-slate-100">
         <div className="py-8 m-auto max-w-5xl flex flex-col gap-8">
           <ProductSection product={produto} />
           <RecommendedProductsSection actualProduct={produto} />

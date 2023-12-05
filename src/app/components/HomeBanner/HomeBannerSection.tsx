@@ -13,7 +13,7 @@ export const HomeBannerSection = async () => {
   }`);
 
   return (
-    <section className="p-4">
+    <section className="px-4">
       <HomeBannerSlider
         images={[
           bannerDaTelaInicial.imagemDoBanner.url,
