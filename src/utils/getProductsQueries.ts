@@ -15,9 +15,11 @@ export const getProductsQueries = ({
   if (!haveQueries) return "";
 
   if (category) {
-    finalQuery = `where: {categorias_some: {nome: "${category}" ${
-      subcategory && `, subcategorias_some: {nome: "${subcategory}"}`
-    }}}`;
+    finalQuery = `where: {categoria_contains_some: "${category}" ${
+      subcategory ? `, subcategoria_contains_some: "${subcategory}"` : ""
+    }
+      ${typeOfProduct ? `, tipoDoProduto_in: [${typeOfProduct}]` : ""}
+    }`;
   }
 
   return finalQuery;

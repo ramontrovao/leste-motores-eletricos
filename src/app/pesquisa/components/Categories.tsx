@@ -32,7 +32,7 @@ export const Categories = ({ categories }: CategoriesProps) => {
     ?.toString()
     .toLowerCase();
   const productTypeActive = currentQueries
-    .get("tipodoproduto")
+    .get("tipoDoProduto")
     ?.toString()
     .toLowerCase();
 
@@ -47,6 +47,10 @@ export const Categories = ({ categories }: CategoriesProps) => {
     queryKey = "categoria",
   }: TSetCategoryParams) => {
     currentQueries.delete("subcategoria");
+
+    if (currentQueries.get(queryKey) === categoryName) {
+      return currentQueries.delete(queryKey);
+    }
 
     currentQueries.set(queryKey, categoryName);
 
@@ -150,8 +154,8 @@ export const Categories = ({ categories }: CategoriesProps) => {
   };
 
   return (
-    <aside className="p-4 rounded-md sticky left-0 top-0 min-h-screen z-20 max-w-[20rem] h-[100vh-15rem] w-full bg-white">
-      <div className="sticky top-4">
+    <aside className="p-4 rounded-md z-20 max-w-[20rem] w-full bg-white overflow-y-scroll h-80">
+      <div>
         <h2 className="text-lg mb-4 text-black pb-2 border-b border-b-blue">
           Filtros de pesquisa
         </h2>

@@ -9,13 +9,13 @@ interface ProductsSectionProps {
 
 export const ProductsSection = ({ products }: ProductsSectionProps) => {
   return (
-    <section className="min-h-screen w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <section className="gap-4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {products?.map((product) => (
         <ProductCard
           productAlt={`Imagem do produto ${product.nome}`}
           key={product.id}
           productName={product.nome}
-          imageUrl={"/logo.svg"}
+          imageUrl={product.imagensDoProduto[0].imagemDoProduto.url}
           productLink={`/produto/${product.id}`}
         />
       ))}
