@@ -48,7 +48,7 @@ export const Categories = ({ categories }: CategoriesProps) => {
   }: TSetCategoryParams) => {
     currentQueries.delete("subcategoria");
 
-    currentQueries.set(queryKey.toLowerCase(), categoryName);
+    currentQueries.set(queryKey, categoryName);
 
     const queriesUpdated = currentQueries.toString();
     const query = queriesUpdated ? `?${queriesUpdated}` : "";
