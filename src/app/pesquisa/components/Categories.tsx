@@ -46,6 +46,7 @@ export const Categories = ({ categories }: CategoriesProps) => {
     categoryName,
     queryKey = "categoria",
   }: TSetCategoryParams) => {
+    currentQueries.delete("q");
     currentQueries.delete("subcategoria");
 
     if (currentQueries.get(queryKey) === categoryName) {

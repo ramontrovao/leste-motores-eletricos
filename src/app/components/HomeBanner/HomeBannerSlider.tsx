@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 interface HomeBanneSliderProps {
   images: string[];
@@ -14,8 +15,9 @@ export const HomeBannerSlider = ({ images }: HomeBanneSliderProps) => {
   return (
     <Swiper
       style={{ borderRadius: "8px" }}
-      modules={[Navigation]}
+      modules={[Navigation, Pagination]}
       slidesPerView={1}
+      pagination
       navigation
       loop>
       {images.map((image) => (

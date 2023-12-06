@@ -25,7 +25,7 @@ export const ReviewSlider = ({ reviews }: ReviewSliderProps) => {
           spaceBetween: 40,
         },
         1024: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 50,
         },
       }}
