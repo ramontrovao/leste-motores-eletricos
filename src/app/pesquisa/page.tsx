@@ -11,12 +11,13 @@ interface SearchProps {
     categoria: string;
     subcategoria: string;
     tipoDoProduto: string;
+    q: string;
   };
   searchParams: { [key: string]: string };
 }
 
 export default async function Search({
-  searchParams: { categoria, subcategoria, tipoDoProduto },
+  searchParams: { categoria, subcategoria, tipoDoProduto, q },
 }: SearchProps) {
   console.log(tipoDoProduto);
 
@@ -40,6 +41,7 @@ export default async function Search({
           category: categoria,
           subcategory: subcategoria,
           typeOfProduct: transformLoanwords(tipoDoProduto),
+          q: transformLoanwords(q),
         })}) {
           id
           nome
@@ -51,25 +53,9 @@ export default async function Search({
         }
       }`);
 
-  console.log(`query ProductsQuery {
-    produtos(${getProductsQueries({
-      category: categoria,
-      subcategory: subcategoria,
-      typeOfProduct: tipoDoProduto,
-    })}) {
-      id
-      nome
-      imagensDoProduto {
-        imagemDoProduto {
-          url
-        }
-      }
-    }
-  }`);
-
   return (
     <main className="w-full bg-slate-100">
-      <div className="w-full py-8 px-4 m-auto max-w-5xl flex flex-wrap gap-4 md:flex-nowrap">
+      <div className="w-full py-8 px-4 m-auto max-w-7xl flex flex-wrap gap-4 md:flex-nowrap">
         <Categories categories={categoriasParaFiltrar} />
 
         <ProductsSection products={res?.produtos ?? []} />

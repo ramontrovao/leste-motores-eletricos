@@ -19,14 +19,20 @@ export const ReviewSection = async () => {
     `);
 
   return (
-    <section className="p-4">
-      <header className="flex justify-between items-center">
-        <h2 className="text-xl font-bold text-zinc-800">AVALIAÇÕES GERAIS</h2>
-      </header>
+    <>
+      {avaliacoes && (
+        <section className="p-4">
+          <header className="flex justify-between items-center">
+            <h2 className="text-xl font-bold text-zinc-800">
+              AVALIAÇÕES GERAIS
+            </h2>
+          </header>
 
-      <main className="mt-5">
-        <ReviewSlider reviews={avaliacoes} />
-      </main>
-    </section>
+          <main className="mt-5">
+            <ReviewSlider reviews={avaliacoes} />
+          </main>
+        </section>
+      )}
+    </>
   );
 };

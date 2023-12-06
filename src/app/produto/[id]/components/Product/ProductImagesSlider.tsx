@@ -26,26 +26,15 @@ export const ProductImagesSlider = ({ images }: ProductImagesSliderProps) => {
       navigation
       loop>
       {images.map((image) => (
-        <>
-          <SwiperSlide>
-            <Image
-              className="w-full"
-              src={image.imagemDoProduto.url}
-              width={1280}
-              height={420}
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              className="w-full"
-              src={image.imagemDoProduto.url}
-              width={1280}
-              height={420}
-              alt=""
-            />
-          </SwiperSlide>
-        </>
+        <SwiperSlide>
+          <Image
+            className="w-full max-h-[40rem]"
+            src={image.imagemDoProduto.url}
+            width={1280}
+            height={420}
+            alt=""
+          />
+        </SwiperSlide>
       ))}
     </Swiper>
   );
