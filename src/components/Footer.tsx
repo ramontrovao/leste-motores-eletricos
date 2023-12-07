@@ -1,4 +1,4 @@
-import { TInformation } from "../types/Information";
+import type { TInformation } from "../types/Information";
 import Image from "next/image";
 import { fetchHygraph } from "../utils/fetchHygraph";
 import { FaEnvelope, FaInstagram, FaPhone, FaWhatsapp } from "react-icons/fa";

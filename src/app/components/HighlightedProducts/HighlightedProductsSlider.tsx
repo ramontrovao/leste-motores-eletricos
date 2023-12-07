@@ -17,8 +17,6 @@ export const HighlightedProductsSlider = ({
   return (
     <Swiper
       modules={[Navigation]}
-      centeredSlides
-      centeredSlidesBounds
       breakpoints={{
         640: {
           slidesPerView: 1,
@@ -39,8 +37,8 @@ export const HighlightedProductsSlider = ({
         <SwiperSlide key={product.id}>
           <ProductCard
             productName={product.nome}
-            productAlt={`Imagem do product ${product.nome}`}
-            productLink="/search"
+            productAlt={`Imagem do produto ${product.nome}`}
+            productLink={`/produto/${product.id}`}
             imageUrl={
               product.imagensDoProduto[0]?.imagemDoProduto.url ?? "/logo.svg"
             }

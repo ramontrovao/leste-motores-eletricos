@@ -1,9 +1,8 @@
-import { TProduct } from "@/src/types/Product";
+import type { TProduct } from "@/src/types/Product";
 import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import { ProductSection } from "./components/Product/ProductSection";
 import { BuyProduct } from "@/src/components/BuyProduct";
 import { RecommendedProductsSection } from "./components/RecommendedProducts/RecommendedProductsSection";
-import { useRouter } from "next/navigation";
 
 interface ProductProps {
   params: {

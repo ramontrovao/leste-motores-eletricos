@@ -1,24 +1,22 @@
 "use client";
 
-import type { TProduct } from "@/src/types/Product";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ProductCard } from "@/src/components/ProductCard";
+import type { TMainCategory } from "@/src/types/MainCategory";
+import { MainCategoryCard } from "@/src/components/MainCategoryCard";
 
 interface HighlightedProductsSliderProps {
-  products: TProduct[];
+  mainCategories: TMainCategory[];
 }
 
-export const RecommendedProductsSlider = ({
-  products,
+export const MainCategoriesSlider = ({
+  mainCategories,
 }: HighlightedProductsSliderProps) => {
   return (
     <Swiper
       modules={[Navigation]}
-      centeredSlides
-      centeredSlidesBounds
       breakpoints={{
         640: {
           slidesPerView: 1,
@@ -35,15 +33,13 @@ export const RecommendedProductsSlider = ({
       }}
       navigation
       loop>
-      {products.map((product) => (
-        <SwiperSlide key={product.id}>
-          <ProductCard
-            productName={product.nome}
-            productAlt={`Imagem do product ${product.nome}`}
-            productLink={`/produto/${product.id}`}
-            imageUrl={
-              product.imagensDoProduto[0]?.imagemDoProduto.url ?? "/logo.svg"
-            }
+      {mainCategories.map((category) => (
+        <SwiperSlide key={category.id}>
+          <MainCategoryCard
+            categoryName={category.nome}
+            categoryAlt={`Imagem da categoria ${category.nome}`}
+            categoryLink={`/pesquisa?categoria=${category.nome}`}
+            imageUrl={category.imagem.url ?? "/logo.svg"}
           />
         </SwiperSlide>
       ))}

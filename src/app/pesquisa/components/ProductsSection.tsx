@@ -1,7 +1,7 @@
 "use client";
 
 import { ProductCard } from "@/src/components/ProductCard";
-import { TProduct } from "@/src/types/Product";
+import type { TProduct } from "@/src/types/Product";
 import { FaSadCry } from "react-icons/fa";
 
 interface ProductsSectionProps {

@@ -1,7 +1,7 @@
 import type { THygraphImage } from "./HygraphImage";
 
-export type TAboutCompany = {
+export type TMainCategory = {
+  id: string;
+  nome: string;
   imagem: THygraphImage;
-  titulo: string;
-  texto: string;
 };

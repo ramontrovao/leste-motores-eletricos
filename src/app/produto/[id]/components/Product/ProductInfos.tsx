@@ -1,6 +1,6 @@
 "use client";
 
-import { TProduct } from "@/src/types/Product";
+import type { TProduct } from "@/src/types/Product";
 import { useState } from "react";
 
 interface ProductInfosProps {

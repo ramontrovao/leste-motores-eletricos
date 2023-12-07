@@ -1,8 +1,8 @@
-import { TCategory } from "@/src/types/Category";
+import type { TCategory } from "@/src/types/Category";
+import type { TProduct } from "@/src/types/Product";
 import { Categories } from "./components/Categories";
 import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import { ProductsSection } from "./components/ProductsSection";
-import { TProduct } from "@/src/types/Product";
 import { getProductsQueries } from "@/src/utils/getProductsQueries";
 import { transformLoanwords } from "@/src/utils/transformLoanwords";
 
@@ -19,8 +19,6 @@ interface SearchProps {
 export default async function Search({
   searchParams: { categoria, subcategoria, tipoDoProduto, q },
 }: SearchProps) {
-  console.log(tipoDoProduto);
-
   const { categoriasParaFiltrar } = await fetchHygraph<{
     categoriasParaFiltrar: TCategory[];
   }>(`query SearchQuery {
