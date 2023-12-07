@@ -2,6 +2,7 @@ import type { THighlightedProducts } from "@/src/types/HighlightedProducts";
 import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import { HiArrowRight } from "react-icons/hi2";
 import { HighlightedProductsSlider } from "./HighlightedProductsSlider";
+import Link from "next/link";
 
 export const HighlightedProductsSection = async () => {
   const { produtosDestaque } =
@@ -30,10 +31,12 @@ export const HighlightedProductsSection = async () => {
             </h2>
 
             <div>
-              <a className="flex justify-center items-center gap-2 text-xl text-zinc-800 cursor-pointer duration-300 hover:opacity-80">
+              <Link
+                href="/pesquisa"
+                className="flex justify-center items-center gap-2 text-xl text-zinc-800 cursor-pointer duration-300 hover:opacity-80">
                 VER MAIS PRODUTOS
                 <HiArrowRight />
-              </a>
+              </Link>
             </div>
           </header>
 

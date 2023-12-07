@@ -1,4 +1,4 @@
-import { TAboutCompany } from "@/src/types/AboutCompany";
+import type { TAboutCompany } from "@/src/types/AboutCompany";
 import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import Image from "next/image";
 

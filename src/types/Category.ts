@@ -1,4 +1,4 @@
-import { TSubcategory } from "./Subcategory";
+import type { TSubcategory } from "./Subcategory";
 
 export type TCategory = {
   id: string;

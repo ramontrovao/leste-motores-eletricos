@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductCardProps {
   imageUrl: string;
@@ -28,11 +29,11 @@ export const ProductCard = async ({
         {productName}
       </span>
 
-      <a
+      <Link
         className="bg-blue text-center p-4 text-white rounded-md w-full duration-300 hover:opacity-80"
         href={productLink}>
         DETALHES DO PRODUTO
-      </a>
+      </Link>
     </div>
   );
 };

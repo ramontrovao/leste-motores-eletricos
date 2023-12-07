@@ -21,7 +21,7 @@ export const Searchbar = () => {
 
   return (
     <div className="bg-slate-50 rounded-lg flex w-full max-w-sm border-2 border-solid focus-within:border-redShadow">
-      <div className="p-2 flex justify-center items-center text-xl">
+      <div className="p-2 flex justify-center items-center text-xl text-blue">
         <HiMagnifyingGlass />
       </div>
 

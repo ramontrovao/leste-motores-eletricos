@@ -1,7 +1,7 @@
 import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import { HiArrowRight } from "react-icons/hi2";
 import { RecommendedProductsSlider } from "./RecommendedProductsSlider";
-import { TProduct } from "@/src/types/Product";
+import type { TProduct } from "@/src/types/Product";
 
 interface RecommendedProductsSectionProps {
   actualProduct: TProduct;
