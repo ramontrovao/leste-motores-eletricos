@@ -28,6 +28,7 @@ export const Searchbar = () => {
       <input
         onChange={(e) => onChangeSearchQuery(e)}
         onKeyDown={(e) => onKeydownSearch(e)}
+        placeholder="Pesquise o seu produto"
         type="text"
         className="bg-transparent p-2 flex-1 outline-none"
       />
