@@ -56,7 +56,8 @@ export default async function Search({
       {categoria && (
         <header className="w-full pb-2 m-auto max-w-7xl">
           <h2 className="text-2xl font-bold">
-            Produtos na categoria: {categoria}
+            {subcategoria && `${subcategoria} em ${categoria}`}
+            {!subcategoria && `${categoria}`}
           </h2>
         </header>
       )}
