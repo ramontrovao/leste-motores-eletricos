@@ -52,10 +52,16 @@ export default async function Search({
       }`);
 
   return (
-    <main className="w-full bg-slate-100">
-      <div className="w-full py-8 px-4 m-auto max-w-7xl flex flex-wrap gap-4 md:flex-nowrap">
+    <main className="w-full px-4 py-8 bg-slate-100">
+      {categoria && (
+        <header className="w-full pb-2 m-auto max-w-7xl">
+          <h2 className="text-2xl font-bold">
+            Produtos na categoria: {categoria}
+          </h2>
+        </header>
+      )}
+      <div className="w-full m-auto max-w-7xl flex flex-wrap gap-4 md:flex-nowrap">
         <Categories categories={categoriasParaFiltrar} />
-
         <ProductsSection products={res?.produtos ?? []} />
       </div>
     </main>
