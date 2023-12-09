@@ -2,7 +2,7 @@
 
 import type { TCategory } from "@/src/types/Category";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { FaArrowRight, FaExclamationCircle } from "react-icons/fa";
+import { FaArrowDown, FaArrowRight, FaExclamationCircle } from "react-icons/fa";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 
 interface CategoriesProps {
@@ -79,7 +79,7 @@ export const Categories = ({ categories }: CategoriesProps) => {
               }),
             }}
             key={subcategory.id}>
-            {subcategory.nome} <FaArrowRight />
+            {subcategory.nome}
           </p>
         ))}
       </>
@@ -103,7 +103,12 @@ export const Categories = ({ categories }: CategoriesProps) => {
                       color: "#064987",
                     }),
                   }}>
-                  {category.nome} <FaArrowRight />
+                  {category.nome}
+                  {categoryActive === category.nome.toLowerCase() ? (
+                    <FaArrowDown />
+                  ) : (
+                    <FaArrowRight />
+                  )}
                 </summary>
                 {renderSubCategories(category)}
               </details>
@@ -155,7 +160,7 @@ export const Categories = ({ categories }: CategoriesProps) => {
   };
 
   return (
-    <aside className="p-4 rounded-md z-20 max-w-[20rem] w-full bg-white overflow-y-scroll h-80">
+    <aside className="p-4 rounded-md z-20 md:max-w-[20rem] w-full bg-white overflow-y-scroll h-80">
       <div>
         <h2 className="text-lg mb-4 text-black pb-2 border-b border-b-blue">
           Filtros de pesquisa

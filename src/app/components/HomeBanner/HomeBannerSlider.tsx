@@ -6,9 +6,10 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import type { THygraphImage } from "@/src/types/HygraphImage";
 
 interface HomeBanneSliderProps {
-  images: string[];
+  images: THygraphImage[];
 }
 
 export const HomeBannerSlider = ({ images }: HomeBanneSliderProps) => {
@@ -21,10 +22,10 @@ export const HomeBannerSlider = ({ images }: HomeBanneSliderProps) => {
       navigation
       loop>
       {images.map((image) => (
-        <SwiperSlide>
+        <SwiperSlide key={image?.id}>
           <Image
-            className="w-full min-h-[20vh] md:min-h-[50vh]"
-            src={image}
+            className="w-full h-[20vh] md:h-[50vh]"
+            src={image.url}
             width={1280}
             height={420}
             alt=""
