@@ -1,21 +1,13 @@
 import type { TAboutCompany } from "@/src/types/AboutCompany";
-import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import Image from "next/image";
 
-export const AboutUsSection = async () => {
-  const {
-    sobreAEmpresa: { titulo, texto, imagem },
-  } = await fetchHygraph<{ sobreAEmpresa: TAboutCompany }>(`query AboutUsQuery {
-            sobreAEmpresa(where: {id: "clpkjawak0orf0blsyfwc3bfl"}) {
-              texto
-              titulo
-              imagem {
-                url
-              }
-            }
-          }
-          `);
+interface AboutUsSectionProps {
+  aboutCompany: TAboutCompany;
+}
 
+export const AboutUsSection = ({
+  aboutCompany: { imagem, titulo, texto },
+}: AboutUsSectionProps) => {
   return (
     <section className="p-4 flex flex-wrap gap-8 justify-between md:flex-nowrap">
       <Image

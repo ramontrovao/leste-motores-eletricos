@@ -15,7 +15,7 @@ export const Footer = async () => {
       numeroDoWhatsapp,
       numeroFixo,
     },
-  } = await fetchHygraph<TInformation>(`query MyQuery {
+  } = await fetchHygraph<{ informacao: TInformation }>(`query MyQuery {
         informacao(where: {id: "clpkiwoog0nk30blwftd2eo8i"}) {
           email
           horarioDeFuncionamento
@@ -54,7 +54,9 @@ export const Footer = async () => {
                 <li>
                   <a
                     className="text-md cursor-pointer duration-300 hover:opacity-80"
-                    href="/sobre-nos">
+                    href={`https://api.whatsapp.com/send?phone=${encodeURIComponent(
+                      numeroDoWhatsapp
+                    )}&text=Olá! Vim pelo site e tenho uma dúvida.`}>
                     Fale conosco
                   </a>
                 </li>

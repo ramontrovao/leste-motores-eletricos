@@ -13,37 +13,41 @@ interface SearchProps {
 export default async function Search({
   searchParams: { categoria, subcategoria, tipoDoProduto, q, pagina = "1" },
 }: SearchProps) {
-  const { categoriasParaFiltrar } = await fetchHygraph<{
-    categoriasParaFiltrar: TCategory[];
-  }>(`query SearchQuery {
-    categoriasParaFiltrar {
-      nome
-      id
-      subcategorias {
-        nome
-        id
-      }
-    }
-  }`);
-
   const res = await fetchHygraph<{
     produtos: TProduct[];
+    informacao: {
+      produtosPorPagina: string;
+    };
+    categoriasParaFiltrar: TCategory[];
   }>(`query ProductsQuery {
-        produtos(${getProductsQueries({
-          category: categoria,
-          subcategory: subcategoria,
-          typeOfProduct: transformLoanwords(tipoDoProduto),
-          q: transformLoanwords(q),
-        })}) {
-          id
-          nome
-          imagensDoProduto {
-            imagemDoProduto {
-              url
+          produtos(${getProductsQueries({
+            category: categoria,
+            subcategory: subcategoria,
+            typeOfProduct: transformLoanwords(tipoDoProduto),
+            q: transformLoanwords(q),
+          })}) {
+            id
+            nome
+            imagensDoProduto {
+              imagemDoProduto {
+                url
+              }
             }
           }
-        }
-      }`);
+
+          informacao(where: {id: "clpkiwoog0nk30blwftd2eo8i"}) {
+            produtosPorPagina
+          }
+
+          categoriasParaFiltrar {
+            nome
+            id
+            subcategorias {
+              nome
+              id
+            }
+          }
+        }`);
 
   return (
     <main className="w-full px-4 py-8 bg-slate-100">
@@ -56,8 +60,12 @@ export default async function Search({
         </header>
       )}
       <div className="w-full m-auto max-w-7xl flex flex-wrap gap-4 md:flex-nowrap">
-        <Categories categories={categoriasParaFiltrar} />
-        <ProductsSection page={Number(pagina)} products={res?.produtos ?? []} />
+        <Categories categories={res.categoriasParaFiltrar} />
+        <ProductsSection
+          page={Number(pagina)}
+          products={res?.produtos ?? []}
+          productsPerPage={Number(res?.informacao?.produtosPorPagina)}
+        />
       </div>
     </main>
   );
