@@ -7,17 +7,11 @@ import { getProductsQueries } from "@/src/utils/getProductsQueries";
 import { transformLoanwords } from "@/src/utils/transformLoanwords";
 
 interface SearchProps {
-  params: {
-    categoria: string;
-    subcategoria: string;
-    tipoDoProduto: string;
-    q: string;
-  };
   searchParams: { [key: string]: string };
 }
 
 export default async function Search({
-  searchParams: { categoria, subcategoria, tipoDoProduto, q },
+  searchParams: { categoria, subcategoria, tipoDoProduto, q, pagina = "1" },
 }: SearchProps) {
   const { categoriasParaFiltrar } = await fetchHygraph<{
     categoriasParaFiltrar: TCategory[];
@@ -63,7 +57,7 @@ export default async function Search({
       )}
       <div className="w-full m-auto max-w-7xl flex flex-wrap gap-4 md:flex-nowrap">
         <Categories categories={categoriasParaFiltrar} />
-        <ProductsSection products={res?.produtos ?? []} />
+        <ProductsSection page={Number(pagina)} products={res?.produtos ?? []} />
       </div>
     </main>
   );
