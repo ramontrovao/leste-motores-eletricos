@@ -1,29 +1,18 @@
-import type { THighlightedProducts } from "@/src/types/HighlightedProducts";
-import { fetchHygraph } from "@/src/utils/fetchHygraph";
+import type { TProduct } from "@/src/types/Product";
 import { HiArrowRight } from "react-icons/hi2";
 import { HighlightedProductsSlider } from "./HighlightedProductsSlider";
 import Link from "next/link";
 
-export const HighlightedProductsSection = async () => {
-  const { produtosDestaque } =
-    await fetchHygraph<THighlightedProducts>(`query HighlightedProductCardQuery {
-        produtosDestaque(where: {id: "clpkja6sf0nwt0bm1j2o5p06u"}) {
-          produtos {
-            id
-            nome
-            imagensDoProduto {
-              imagemDoProduto {
-                url
-              }
-            }
-            descricao
-          }
-        }
-      }`);
+interface HighlightedProductsSectionProps {
+  products: TProduct[];
+}
 
+export const HighlightedProductsSection = async ({
+  products,
+}: HighlightedProductsSectionProps) => {
   return (
     <>
-      {produtosDestaque && (
+      {products && (
         <section className="p-4">
           <header className="flex justify-between items-center">
             <h2 className="text-xl font-bold text-zinc-800">
@@ -41,7 +30,7 @@ export const HighlightedProductsSection = async () => {
           </header>
 
           <main className="mt-5">
-            <HighlightedProductsSlider products={produtosDestaque?.produtos} />
+            <HighlightedProductsSlider products={products} />
           </main>
         </section>
       )}

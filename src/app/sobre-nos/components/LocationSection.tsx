@@ -1,23 +1,13 @@
 import type { TAboutCompany } from "@/src/types/AboutCompany";
-import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import Image from "next/image";
 
-export const LocationSection = async () => {
-  const {
-    localizacao: { titulo, texto, imagem },
-  } = await fetchHygraph<{
-    localizacao: TAboutCompany;
-  }>(`query LocationQuery {
-    localizacao(where: {id: "clpkj43zc0ohs0bls5okpyzzb"}) {
-      texto
-      titulo
-      imagem {
-        url
-      }
-    }
-  }
-  `);
+interface LocationSectionProps {
+  aboutLocation: TAboutCompany;
+}
 
+export const LocationSection = ({
+  aboutLocation: { titulo, texto, imagem },
+}: LocationSectionProps) => {
   return (
     <section className="p-4 flex flex-wrap gap-8 justify-between md:flex-nowrap">
       <div className="flex flex-1 flex-col gap-4">

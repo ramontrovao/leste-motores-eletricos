@@ -1,40 +1,18 @@
-import { fetchHygraph } from "@/src/utils/fetchHygraph";
 import { HiArrowRight } from "react-icons/hi2";
 import { RecommendedProductsSlider } from "./RecommendedProductsSlider";
 import type { TProduct } from "@/src/types/Product";
 
 interface RecommendedProductsSectionProps {
   actualProduct: TProduct;
+  products: TProduct[];
 }
 
 export const RecommendedProductsSection = async ({
   actualProduct,
+  products,
 }: RecommendedProductsSectionProps) => {
-  const { produtos } = await fetchHygraph<{
-    produtos: TProduct[];
-  }>(`query ProductsQuery {
-      produtos {
-        nome
-        id
-        descricao
-        caracteristicas {
-          id
-          nome
-        }
-        imagensDoProduto {
-          imagemDoProduto {
-            id
-            url
-          }
-          tituloDaImagem
-        }
-      }
-    }
-    
-      `);
-
-  const recommendedProducts = produtos.filter(
-    (product) => product?.categorias === actualProduct?.categorias
+  const recommendedProducts = products.filter(
+    (product) => product?.categoria === actualProduct?.categoria
   );
 
   return (

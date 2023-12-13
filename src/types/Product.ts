@@ -6,7 +6,7 @@ export type TProduct = {
   id: string;
   nome: string;
   caracteristicas: TCharacteristic[];
-  categorias: TCategory[];
+  categoria: string[];
   descricao: string;
   imagensDoProduto: {
     id: string;
