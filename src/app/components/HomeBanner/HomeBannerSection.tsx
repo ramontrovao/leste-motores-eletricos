@@ -5,7 +5,7 @@ interface HomeBannerSectionProps {
   images: THygraphImage[];
 }
 
-export const HomeBannerSection = async ({ images }: HomeBannerSectionProps) => {
+export const HomeBannerSection = ({ images }: HomeBannerSectionProps) => {
   return (
     <section className="px-4">
       <HomeBannerSlider images={images} />

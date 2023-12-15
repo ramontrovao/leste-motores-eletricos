@@ -32,12 +32,12 @@ export const ReviewSlider = ({ reviews }: ReviewSliderProps) => {
       navigation
       loop>
       {reviews.map((review) => (
-        <SwiperSlide key={review.id}>
+        <SwiperSlide key={review?.id}>
           <ReviewCard
-            customerName={review.nomeDoCliente}
-            description={review.descricaoDaAvaliacao}
-            imageUrl={review.fotoDoCliente.url}
-            rating={review.numeroDeEstrelas}
+            customerName={review?.nomeDoCliente}
+            description={review?.descricaoDaAvaliacao}
+            imageUrl={review?.fotoDoCliente?.url}
+            rating={review?.numeroDeEstrelas}
           />
         </SwiperSlide>
       ))}

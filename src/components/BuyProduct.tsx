@@ -5,7 +5,7 @@ interface BuyProductProps {
   whatsappNumber: string;
 }
 
-export const BuyProduct = async ({
+export const BuyProduct = ({
   productName,
   whatsappNumber,
 }: BuyProductProps) => {

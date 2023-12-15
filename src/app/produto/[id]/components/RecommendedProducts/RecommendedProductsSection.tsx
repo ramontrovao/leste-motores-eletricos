@@ -7,7 +7,7 @@ interface RecommendedProductsSectionProps {
   products: TProduct[];
 }
 
-export const RecommendedProductsSection = async ({
+export const RecommendedProductsSection = ({
   actualProduct,
   products,
 }: RecommendedProductsSectionProps) => {
