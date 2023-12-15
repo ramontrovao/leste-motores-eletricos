@@ -8,7 +8,7 @@ interface MainCategoryProps {
   categoryLink: string;
 }
 
-export const MainCategoryCard = async ({
+export const MainCategoryCard = ({
   imageUrl = "/logo.svg",
   categoryName = "Falha ao carregar o nome da categoria :(",
   categoryAlt = "Falha ao carregar a legenda da categoria :(",

@@ -8,7 +8,7 @@ interface ProductCardProps {
   productLink: string;
 }
 
-export const ProductCard = async ({
+export const ProductCard = ({
   imageUrl = "/logo.svg",
   productName = "Falha ao carregar o nome do produto :(",
   productAlt = "Falha ao carregar a legenda do produto :(",
@@ -21,11 +21,12 @@ export const ProductCard = async ({
         alt={productAlt}
         width={170}
         height={170}
+        className="h-full"
       />
 
       <span
         title={productName}
-        className="w-full text-lg truncate">
+        className="w-full min-h-[2rem] leading-8 text-lg truncate">
         {productName}
       </span>
 

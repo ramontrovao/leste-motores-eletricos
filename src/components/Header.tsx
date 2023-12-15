@@ -12,8 +12,12 @@ export const Header = () => {
             alt="Logo da Leste Motores"
             width={200}
             height={50}
-            className="max-w-[8rem]"
+            className="max-w-[12rem]"
           />
+
+          <span className="text-white text-sm max-w-[15rem]">
+            Motores, Vendas e Locação
+          </span>
         </Link>
 
         <Searchbar />

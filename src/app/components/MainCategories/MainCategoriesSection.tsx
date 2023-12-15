@@ -7,7 +7,7 @@ interface MainCategoriesSectionProps {
   mainCategories: TMainCategory[];
 }
 
-export const MainCategoriesSection = async ({
+export const MainCategoriesSection = ({
   mainCategories,
 }: MainCategoriesSectionProps) => {
   return (

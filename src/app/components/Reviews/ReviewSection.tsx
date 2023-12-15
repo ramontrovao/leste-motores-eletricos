@@ -5,7 +5,7 @@ interface ReviewSectionProps {
   reviews: TReview[];
 }
 
-export const ReviewSection = async ({ reviews }: ReviewSectionProps) => {
+export const ReviewSection = ({ reviews }: ReviewSectionProps) => {
   return (
     <>
       {reviews && (

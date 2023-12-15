@@ -7,7 +7,7 @@ interface HighlightedProductsSectionProps {
   products: TProduct[];
 }
 
-export const HighlightedProductsSection = async ({
+export const HighlightedProductsSection = ({
   products,
 }: HighlightedProductsSectionProps) => {
   return (

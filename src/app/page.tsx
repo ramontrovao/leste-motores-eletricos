@@ -19,46 +19,45 @@ export default async function Home() {
     bannerDaTelaInicial: { imagemDoBanner: THygraphImage[] };
     principaisCategorias: TMainCategory[];
     avaliacoes: TReview[];
-  }>(`query HighlightedProductCardQuery {
-      produtosDestaque(where: {id: "clpkja6sf0nwt0bm1j2o5p06u"}) {
-        produtos {
-          id
-          nome
-          imagensDoProduto {
-            imagemDoProduto {
-              url
-            }
-          }
-          descricao
-        }
-      }
-
-      bannerDaTelaInicial(where: {id: "clpkinrn60ns10blsz4kmwt1b"}) {
-        imagemDoBanner {
-          url
-          id
-        }
-      }
-
-      principaisCategorias {
+  }>(`query HomeQuery {
+    produtosDestaque(where: {id: "clpkja6sf0nwt0bm1j2o5p06u"}) {
+      produtos {
         id
         nome
-        imagem {
-          url
+        imagensDoProduto {
+          imagemDoProduto {
+            url
+          }
         }
+        descricao
       }
-    
-
-      avaliacoes {
+    }
+    bannerDaTelaInicial(where: {id: "clpkinrn60ns10blsz4kmwt1b"}) {
+      imagemDoBanner {
+        url
         id
-        nomeDoCliente
-        numeroDeEstrelas
-        descricaoDaAvaliacao
-        fotoDoCliente {
-          url
-        }
       }
-    }`);
+    }
+    principaisCategorias {
+      id
+      nome
+      imagem {
+        url
+      }
+    }
+    avaliacoes {
+      id
+      nomeDoCliente
+      numeroDeEstrelas
+      descricaoDaAvaliacao
+      fotoDoCliente {
+        url
+      }
+    }
+  }
+  `);
+
+  console.log(avaliacoes[0]?.fotoDoCliente);
 
   return (
     <main className="w-full bg-slate-100">

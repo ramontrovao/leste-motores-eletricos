@@ -9,7 +9,7 @@ interface ReviewCardProps {
   imageUrl: string;
 }
 
-export const ReviewCard = async ({
+export const ReviewCard = ({
   imageUrl = "/logo.svg",
   customerName = "Falha ao carregar o nome do cliente :(",
   rating = "0",
