@@ -11,7 +11,7 @@ export const ReviewSection = ({ reviews }: ReviewSectionProps) => {
       {reviews && (
         <section className="p-4">
           <header className="flex justify-between items-center">
-            <h2 className="text-xl font-bold text-zinc-800">
+            <h2 className="text-lg font-bold text-zinc-800 md:text-xl">
               AVALIAÇÕES GERAIS
             </h2>
           </header>
