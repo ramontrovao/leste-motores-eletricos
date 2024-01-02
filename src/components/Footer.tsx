@@ -40,7 +40,7 @@ export const Footer = async () => {
 
         <div className="flex flex-wrap gap-16 md:flex-nowrap">
           <div>
-            <h3 className="text-xl font-bold">Instituição</h3>
+            <h3 className="text-md font-bold md:text-xl">Instituição</h3>
 
             <nav className="mt-2">
               <ul className="flex flex-col gap-1">
@@ -98,7 +98,7 @@ export const Footer = async () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold">Atendimento</h3>
+            <h3 className="text-md font-bold md:text-xl">Atendimento</h3>
 
             <nav className="mt-2">
               <ul className="flex justify-start items-start flex-col gap-1">

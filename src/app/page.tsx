@@ -57,8 +57,6 @@ export default async function Home() {
   }
   `);
 
-  console.log(avaliacoes[0]?.fotoDoCliente);
-
   return (
     <main className="w-full bg-slate-100">
       <div className="py-8 m-auto max-w-7xl flex flex-col gap-8">

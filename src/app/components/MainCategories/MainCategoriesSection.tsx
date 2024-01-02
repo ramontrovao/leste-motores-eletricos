@@ -14,16 +14,16 @@ export const MainCategoriesSection = ({
     <>
       {mainCategories && (
         <section className="p-4">
-          <header className="flex justify-between items-center">
-            <h2 className="text-xl font-bold text-zinc-800">
+          <header className="flex gap-2 justify-between items-center">
+            <h2 className="w-min text-md font-bold text-zinc-800 md:w-auto md:text-xl">
               PRINCIPAIS CATEGORIAS
             </h2>
 
             <div>
               <Link
                 href="/pesquisa"
-                className="flex justify-center items-center gap-2 text-xl text-zinc-800 cursor-pointer duration-300 hover:opacity-80">
-                VER MAIS CATEGORIAS
+                className="w-min flex justify-center items-center gap-2 text-md text-zinc-800 cursor-pointer duration-300 hover:opacity-80 md:w-auto  md:text-xl">
+                  VER MAIS CATEGORIAS
                 <HiArrowRight />
               </Link>
             </div>
