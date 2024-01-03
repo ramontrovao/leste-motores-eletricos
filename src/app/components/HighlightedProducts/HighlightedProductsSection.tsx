@@ -22,7 +22,7 @@ export const HighlightedProductsSection = ({
             <div>
               <Link
                 href="/pesquisa"
-                className="w-min flex justify-center items-center gap-2 text-md text-zinc-800 cursor-pointer duration-300 hover:opacity-80 md:w-auto  md:text-xl">
+                className="w-min underline underline-offset-4 flex justify-center items-center gap-2 text-sm text-zinc-800 cursor-pointer duration-300 hover:opacity-80 md:w-auto  md:text-xl">
                   VER MAIS PRODUTOS
                 <HiArrowRight />
               </Link>
