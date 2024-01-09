@@ -6,10 +6,10 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import type { THygraphImage } from "@/src/types/HygraphImage";
+import type { THygraphAsset } from "@/src/types/HygraphImage";
 
 interface HomeBanneSliderProps {
-  images: THygraphImage[];
+  images: THygraphAsset[];
 }
 
 export const HomeBannerSlider = ({ images }: HomeBanneSliderProps) => {

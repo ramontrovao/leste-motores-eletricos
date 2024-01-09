@@ -14,19 +14,22 @@ export const Footer = async () => {
       mensagemRecomendadaWhatsapp,
       numeroDoWhatsapp,
       numeroFixo,
+      termosEmPdf
     },
-  } = await fetchHygraph<{ informacao: TInformation }>(`query MyQuery {
-        informacao(where: {id: "clpkiwoog0nk30blwftd2eo8i"}) {
-          email
-          horarioDeFuncionamento
-          linkDoInstagram
-          linkDoMapsDaLojaFisica
-          mensagemRecomendadaWhatsapp
-          numeroDoWhatsapp
-          numeroFixo
-        }
+  } = await fetchHygraph<{ informacao: TInformation }>(`query FooterQuery {
+    informacao(where: {id: "clpkiwoog0nk30blwftd2eo8i"}) {
+      email
+      horarioDeFuncionamento
+      linkDoInstagram
+      linkDoMapsDaLojaFisica
+      mensagemRecomendadaWhatsapp
+      numeroDoWhatsapp
+      numeroFixo
+      termosEmPdf {
+        url
       }
-      `);
+    }
+  }`);
 
   return (
     <footer className="p-4 w-full bg-white">
@@ -49,6 +52,13 @@ export const Footer = async () => {
                     className="text-md cursor-pointer duration-300 hover:opacity-80"
                     href="/sobre-nos">
                     Sobre nós
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-md cursor-pointer duration-300 hover:opacity-80"
+                    href={termosEmPdf.url}>
+                    Nossos termos
                   </a>
                 </li>
                 <li>

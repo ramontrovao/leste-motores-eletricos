@@ -1,8 +1,8 @@
-import type { THygraphImage } from "@/src/types/HygraphImage";
+import type { THygraphAsset } from "@/src/types/HygraphImage";
 import { HomeBannerSlider } from "./HomeBannerSlider";
 
 interface HomeBannerSectionProps {
-  images: THygraphImage[];
+  images: THygraphAsset[];
 }
 
 export const HomeBannerSection = ({ images }: HomeBannerSectionProps) => {

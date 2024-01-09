@@ -1,7 +1,7 @@
-import type { THygraphImage } from "./HygraphImage";
+import type { THygraphAsset } from "./HygraphImage";
 
 export type TAboutCompany = {
-  imagem: THygraphImage;
+  imagem: THygraphAsset;
   titulo: string;
   texto: string;
 };

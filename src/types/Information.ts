@@ -1,3 +1,5 @@
+import { THygraphAsset } from "./HygraphImage";
+
 export type TInformation = {
   email: string;
   linkDoInstagram: string;
@@ -6,4 +8,5 @@ export type TInformation = {
   numeroDoWhatsapp: string;
   numeroFixo: string;
   horarioDeFuncionamento: string;
+  termosEmPdf: THygraphAsset
 };
