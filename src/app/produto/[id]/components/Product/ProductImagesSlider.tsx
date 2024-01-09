@@ -1,6 +1,6 @@
 "use client";
 
-import type { THygraphImage } from "@/src/types/HygraphImage";
+import type { THygraphAsset } from "@/src/types/HygraphImage";
 import Image from "next/image";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -12,7 +12,7 @@ interface ProductImagesSliderProps {
   images: {
     id: string;
     tituloDaImagem: string;
-    imagemDoProduto: THygraphImage;
+    imagemDoProduto: THygraphAsset;
   }[];
 }
 

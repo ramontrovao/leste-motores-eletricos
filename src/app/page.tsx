@@ -1,4 +1,4 @@
-import type { THygraphImage } from "../types/HygraphImage";
+import type { THygraphAsset } from "../types/HygraphImage";
 import type { TMainCategory } from "../types/MainCategory";
 import type { TProduct } from "../types/Product";
 import type { TReview } from "../types/Review";
@@ -16,7 +16,7 @@ export default async function Home() {
     avaliacoes,
   } = await fetchHygraph<{
     produtosDestaque: { produtos: TProduct[] };
-    bannerDaTelaInicial: { imagemDoBanner: THygraphImage[] };
+    bannerDaTelaInicial: { imagemDoBanner: THygraphAsset[] };
     principaisCategorias: TMainCategory[];
     avaliacoes: TReview[];
   }>(`query HomeQuery {

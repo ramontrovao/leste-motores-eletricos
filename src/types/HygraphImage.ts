@@ -1,4 +1,4 @@
-export type THygraphImage = {
+export type THygraphAsset = {
   id?: string;
   url: string;
 };
