@@ -4,9 +4,11 @@ import type { TCategory } from "@/src/types/Category";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FaArrowDown, FaArrowRight, FaExclamationCircle } from "react-icons/fa";
 import * as RadioGroup from "@radix-ui/react-radio-group";
+import { TProductType } from "@/src/types/ProductType";
 
 interface CategoriesProps {
   categories: TCategory[];
+  productTypes: TProductType[]
 }
 
 type TSetCategoryParams = {
@@ -14,7 +16,7 @@ type TSetCategoryParams = {
   queryKey?: "categoria" | "subcategoria" | "tipoDoProduto";
 };
 
-export const Categories = ({ categories }: CategoriesProps) => {
+export const Categories = ({ categories, productTypes }: CategoriesProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -35,12 +37,6 @@ export const Categories = ({ categories }: CategoriesProps) => {
     .get("tipoDoProduto")
     ?.toString()
     .toLowerCase();
-
-  const productTypes = [
-    { name: "Locação", color: "#C7B22A" },
-    { name: "Pesados", color: "#EB7373" },
-    { name: "Vendas", color: "#2EBB17" },
-  ];
 
   const handleSetCategory = ({
     categoryName,
@@ -89,7 +85,7 @@ export const Categories = ({ categories }: CategoriesProps) => {
   const renderCategories = () => {
     return (
       <div className="ml-2 mt-2">
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <div key={category.id}>
             {category.subcategorias.length > 0 && (
               <details open={categoryActive === category.nome.toLowerCase()}>
@@ -141,18 +137,18 @@ export const Categories = ({ categories }: CategoriesProps) => {
           handleSetCategory({ categoryName: value, queryKey: "tipoDoProduto" })
         }
         className="ml-2 mt-2 mb-2 flex gap-2 flex-wrap">
-        {productTypes.map((productType) => (
+        {productTypes?.map((productType) => (
           <RadioGroup.Item
             className="flex justify-center items-center gap-2 border border-solid border-transparent bg-zinc-200 transition-all duration-300 rounded-md p-2 hover:opacity-80"
-            value={productType.name}
-            key={productType.name}
+            value={productType.tipoDoProduto}
+            key={productType.tipoDoProduto}
             style={{
-              ...(productTypeActive === productType.name.toLowerCase() && {
-                color: productType.color,
-                borderColor: productType.color,
+              ...(productTypeActive === productType.tipoDoProduto.toLowerCase() && {
+                color: productType.cor.hex,
+                borderColor: productType.cor.hex,
               }),
             }}>
-            {productType.name} <FaExclamationCircle />
+            {productType.tipoDoProduto} <FaExclamationCircle />
           </RadioGroup.Item>
         ))}
       </RadioGroup.Root>
